@@ -9,6 +9,14 @@ public class PersonBean {
     private String name;
     private String addr;
 
+    public PersonBean() {
+    }
+
+    public PersonBean(String name, String addr) {
+        this.name = name;
+        this.addr = addr;
+    }
+
     public int getId() {
         return id;
     }

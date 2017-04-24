@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        // Handle action bar adapter_item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Handle navigation view adapter_item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
@@ -107,21 +107,28 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick(R.id.btn_testpage)
-    public void onClick() {
-        if(ViewUtils.isFastDoubleClick()){
+    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout})
+    public void onClick(View v) {
+        if (ViewUtils.isFastDoubleClick()) {
             return;
         }
-        toActivity(TestAdActivity.class,false);
+        switch (v.getId()){
+            case R.id.btn_testpage:
+                toActivity(TestAdActivity.class, false);
+                break;
+            case R.id.btn_tesdrawerlayout:
+                toActivity(DrawerLayoutActivity.class, false);
+                break;
+        }
+
 
     }
+
     /**
      * 跳转到下一个Activity
      *
-     * @param cls
-     *            目标Activity
-     * @param closeFlag
-     *            是否关闭当前Activity
+     * @param cls       目标Activity
+     * @param closeFlag 是否关闭当前Activity
      */
     protected void toActivity(Class<?> cls, boolean closeFlag) {
         Intent intent = new Intent();
@@ -131,4 +138,6 @@ public class MainActivity extends AppCompatActivity
         if (closeFlag)
             finish();
     }
+
+
 }

@@ -44,7 +44,7 @@ public class TestAdActivity extends AppCompatActivity {
             personBean.setAddr("addr"+i);
             personBeenList.add(personBean);
         }
-        personBeanMyBaseAdapter = new MyBaseAdapter<PersonBean>(personBeenList,R.layout.item) {
+        personBeanMyBaseAdapter = new MyBaseAdapter<PersonBean>(personBeenList,R.layout.adapter_item) {
             @Override
             public void bindView(ViewHolder holder, final PersonBean obj) {
                 holder.setText(R.id.tv_t1,obj.getName());
