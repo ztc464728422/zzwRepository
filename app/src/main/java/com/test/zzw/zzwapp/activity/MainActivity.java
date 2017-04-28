@@ -1,5 +1,7 @@
 package com.test.zzw.zzwapp.activity;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout})
+    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout,R.id.btn_testmutilayiytadapter,R.id.btn_testbindservice,R.id.btn_aidl})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -118,6 +120,30 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.btn_tesdrawerlayout:
                 toActivity(DrawerLayoutActivity.class, false);
+                break;
+            case R.id.btn_testmutilayiytadapter:
+                try {
+                    ActivityManager activityMgr = (ActivityManager) MainActivity.this
+                            .getSystemService(Context.ACTIVITY_SERVICE);
+                    activityMgr.killBackgroundProcesses(MainActivity.this.getPackageName());
+                    System.exit(0);
+                } catch (Exception ignored) {}
+//                toActivity(MutiLayoutAdActivity.class, false);
+//                Intent intent = getPackageManager().getLaunchIntentForPackage
+//                        ("com.linkshop.client.activity.WelcomeActivity") ;
+//                if(intent != null) startActivity(intent) ;
+
+//                Intent mIntent = new Intent( );
+//                ComponentName comp = new ComponentName("com.linkshop.client.activity", "WelcomeActivity");
+//                mIntent.setComponent(comp);
+//                mIntent.setAction("android.intent.action.VIEW");
+//                startActivity(mIntent);
+                break;
+            case R.id.btn_testbindservice:
+                startActivity(new Intent(MainActivity.this, TestBindSerActivity.class));
+                break;
+            case R.id.btn_aidl:
+                startActivity(new Intent(MainActivity.this, TestAIDLDDActivity.class));
                 break;
         }
 
