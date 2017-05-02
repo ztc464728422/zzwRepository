@@ -14,35 +14,26 @@
     tools:showIn="@layout/app_bar_main"
     tools:context="com.test.zzw.zzwapp.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
     <Button
         android:id="@+id/btn_testpage"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="testpage"/>
     <Button
         android:layout_below="@id/btn_testpage"
         android:id="@+id/btn_tesdrawerlayout"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="btn_tesdrawerlayout"/>
     <Button
         android:layout_below="@id/btn_tesdrawerlayout"
         android:id="@+id/btn_testmutilayiytadapter"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试多样式列表"/>
     <Button
         android:layout_below="@id/btn_testmutilayiytadapter"
         android:id="@+id/btn_testbindservice"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试绑定服务"/>
@@ -50,8 +41,19 @@
     <Button
         android:layout_below="@id/btn_testbindservice"
         android:id="@+id/btn_aidl"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试AIDL"/>
+    <Button
+        android:layout_below="@id/btn_aidl"
+        android:id="@+id/btn_com_aidl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试复杂对象AIDL"/>
+    <Button
+        android:layout_below="@id/btn_com_aidl"
+        android:id="@+id/btn_transact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试onTransact通信"/>
 </RelativeLayout>

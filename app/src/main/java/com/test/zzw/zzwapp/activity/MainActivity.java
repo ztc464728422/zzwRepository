@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout,R.id.btn_testmutilayiytadapter,R.id.btn_testbindservice,R.id.btn_aidl})
+    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout,R.id.btn_testmutilayiytadapter,R.id.btn_testbindservice,R.id.btn_aidl,R.id.btn_com_aidl,R.id.btn_transact})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -145,6 +145,13 @@ public class MainActivity extends AppCompatActivity
             case R.id.btn_aidl:
                 startActivity(new Intent(MainActivity.this, TestAIDLDDActivity.class));
                 break;
+            case R.id.btn_com_aidl:
+                startActivity(new Intent(MainActivity.this, AIDLComplexActivity.class));
+                break;
+            case R.id.btn_transact:
+                startActivity(new Intent(MainActivity.this, TransactActivity.class));
+                break;
+
         }
 
 
