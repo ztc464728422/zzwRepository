@@ -56,4 +56,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试onTransact通信"/>
+    <Button
+        android:layout_below="@id/btn_transact"
+        android:id="@+id/btn_sax_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sax解析xml"/>
+    <Button
+        android:layout_below="@id/btn_sax_xml"
+        android:id="@+id/btn_dom_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="domx解析xml"/>
 </RelativeLayout>

@@ -12,6 +12,7 @@ public class Person implements Parcelable {
 
     private Integer id;
     private String name;
+    private Integer age;
 
     @Override
     public int describeContents() {
@@ -78,5 +79,30 @@ public class Person implements Parcelable {
         else if (!name.equals(other.name))
             return false;
         return true;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

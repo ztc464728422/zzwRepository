@@ -17,7 +17,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.test.zzw.zzwapp.R;
+import com.test.zzw.zzwapp.bean.Person;
+import com.test.zzw.zzwapp.db.MyDBOpenHelper;
+import com.test.zzw.zzwapp.utils.DomHelper;
+import com.test.zzw.zzwapp.utils.SaxHelper;
 import com.test.zzw.zzwapp.utils.ViewUtils;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -50,6 +60,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        initdb();
+    }
+
+    private void initdb() {
+        MyDBOpenHelper my = new MyDBOpenHelper(this, "", null, 1);
+        my.getWritableDatabase();
     }
 
     @Override
@@ -109,12 +125,12 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick({R.id.btn_testpage,R.id.btn_tesdrawerlayout,R.id.btn_testmutilayiytadapter,R.id.btn_testbindservice,R.id.btn_aidl,R.id.btn_com_aidl,R.id.btn_transact})
+    @OnClick({R.id.btn_testpage, R.id.btn_tesdrawerlayout, R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice, R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,R.id.btn_sax_xml,R.id.btn_dom_xml})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
         }
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_testpage:
                 toActivity(TestAdActivity.class, false);
                 break;
@@ -127,7 +143,8 @@ public class MainActivity extends AppCompatActivity
                             .getSystemService(Context.ACTIVITY_SERVICE);
                     activityMgr.killBackgroundProcesses(MainActivity.this.getPackageName());
                     System.exit(0);
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                }
 //                toActivity(MutiLayoutAdActivity.class, false);
 //                Intent intent = getPackageManager().getLaunchIntentForPackage
 //                        ("com.linkshop.client.activity.WelcomeActivity") ;
@@ -151,12 +168,34 @@ public class MainActivity extends AppCompatActivity
             case R.id.btn_transact:
                 startActivity(new Intent(MainActivity.this, TransactActivity.class));
                 break;
-
+            case R.id.btn_sax_xml:
+                try {
+                    readxmlForSAX();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.btn_dom_xml:
+                DomHelper.queryXML(this);
+                break;
         }
 
 
     }
-
+    private ArrayList<Person> readxmlForSAX() throws Exception {
+        //获取文件资源建立输入流对象
+        InputStream is = getAssets().open("person1.xml");
+        //①创建XML解析处理器
+        SaxHelper ss = new SaxHelper();
+        //②得到SAX解析工厂
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        //③创建SAX解析器
+        SAXParser parser = factory.newSAXParser();
+        //④将xml解析处理器分配给解析器,对文档进行解析,将事件发送给处理器
+        parser.parse(is, ss);
+        is.close();
+        return ss.getPersons();
+    }
     /**
      * 跳转到下一个Activity
      *
