@@ -68,4 +68,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="domx解析xml"/>
+    <Button
+        android:layout_below="@id/btn_dom_xml"
+        android:id="@+id/btn_jni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="jni"/>
 </RelativeLayout>
