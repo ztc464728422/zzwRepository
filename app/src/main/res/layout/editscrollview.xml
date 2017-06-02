@@ -16,7 +16,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <include layout="@layout/top_bar" />
+            <!--<include layout="@layout/top_bar" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -24,18 +24,18 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <ImageView
+            <!--    <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14.5dp"
                     android:src="@drawable/email_img" />
-
+-->
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                <!--    <Button
                         android:id="@+id/tv_buy"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
@@ -43,7 +43,7 @@
                         android:background="@color/costom_yellow_fe"
                         android:gravity="center"
                         android:textColor="@color/md_white_1000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" />-->
                 </LinearLayout>
             </LinearLayout>
 
@@ -60,7 +60,7 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
+   <!--     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email"
@@ -80,6 +80,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/costom_grey99"></View>
+            android:background="@color/costom_grey99"></View>-->
     </LinearLayout>
 </FrameLayout>

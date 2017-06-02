@@ -127,7 +127,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick({R.id.btn_jni,R.id.btn_testpage, R.id.btn_tesdrawerlayout, R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice, R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,R.id.btn_sax_xml,R.id.btn_dom_xml})
+    @OnClick({R.id.btn_jni, R.id.btn_testpage, R.id.btn_tesdrawerlayout,
+            R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice,
+            R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,
+            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -184,7 +187,10 @@ public class MainActivity extends AppCompatActivity
                 helloJni2();
 //                Toast.makeText(this,fromJni(),Toast.LENGTH_SHORT).show();
 //                Toast.makeText(this, JNIUtils.fromJni(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, new JNIUtils().fromJni2(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, new JNIUtils().fromJni2(), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_databinding:
+                startActivity(new Intent(MainActivity.this, DataBindingActivity.class));
 
                 break;
 
@@ -192,6 +198,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
     private ArrayList<Person> readxmlForSAX() throws Exception {
         //获取文件资源建立输入流对象
         InputStream is = getAssets().open("person1.xml");
@@ -206,6 +213,7 @@ public class MainActivity extends AppCompatActivity
         is.close();
         return ss.getPersons();
     }
+
     /**
      * 跳转到下一个Activity
      *
@@ -220,13 +228,17 @@ public class MainActivity extends AppCompatActivity
         if (closeFlag)
             finish();
     }
+
     static {
         System.loadLibrary("myjni");
     }
 
     public native void helloJni();
+
     public native String fromJni();
+
     public native String fromJni2();
+
     public native void helloJni2();
 
 }

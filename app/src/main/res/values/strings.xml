@@ -9,4 +9,8 @@
     <!--  Tag_APP  Tag_Book -->
     <item name="Tag_APP" type="id"></item>
     <item name="Tag_Book" type="id"></item>
+
+    <string name="phone_edit_hint">请输入手机号</string>
+
+
 </resources>

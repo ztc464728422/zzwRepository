@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.test.zzw.zzwapp.bean.User" />
+
+        <import type="com.test.zzw.zzwapp.activity.handler.EventHandlers" />
+
+        <import type="com.test.zzw.zzwapp.activity.DataBindingActivity" />
+
+        <import type="com.test.zzw.zzwapp.bean.Student" />
+
+        <import type="com.test.zzw.zzwapp.bean.TestObservableFieldBean" />
+
+        <variable
+            name="stu"
+            type="Student" />
+
+        <variable
+            name="handlers"
+            type="EventHandlers" />
+
+        <variable
+            name="click"
+            type="DataBindingActivity" />
+
+        <variable
+            name="testObservableFieldBean"
+            type="TestObservableFieldBean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{stu.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{testObservableFieldBean.name}" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{click.myClick}"
+            android:text="点我" />
+
+    </LinearLayout>
+</layout>

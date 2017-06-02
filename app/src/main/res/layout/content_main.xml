@@ -74,4 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="jni"/>
+    <Button
+        android:layout_toRightOf="@id/btn_testpage"
+        android:id="@+id/btn_databinding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="databinding"/>
 </RelativeLayout>
