@@ -31,6 +31,9 @@
             name="testObservableFieldBean"
             type="TestObservableFieldBean" />
 
+        <variable
+            name="list"
+            type="android.databinding.ObservableArrayList&lt;String>" />
     </data>
 
     <LinearLayout
@@ -52,6 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{testObservableFieldBean.name}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[0]}" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
