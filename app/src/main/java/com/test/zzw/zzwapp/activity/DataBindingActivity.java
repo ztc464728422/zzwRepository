@@ -43,7 +43,6 @@ public class DataBindingActivity extends AppCompatActivity {
          list = new ObservableArrayList<>();
         list.add("loader!!!");
         binding.setList(list);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_content,new DataBindingFragment()).commit();
     }
 
