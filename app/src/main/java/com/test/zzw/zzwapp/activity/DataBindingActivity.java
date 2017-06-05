@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.test.zzw.zzwapp.R;
+import com.test.zzw.zzwapp.activity.fragment.DataBindingFragment;
 import com.test.zzw.zzwapp.activity.handler.EventHandlers;
 import com.test.zzw.zzwapp.bean.Student;
 import com.test.zzw.zzwapp.bean.TestObservableFieldBean;
@@ -42,6 +43,8 @@ public class DataBindingActivity extends AppCompatActivity {
          list = new ObservableArrayList<>();
         list.add("loader!!!");
         binding.setList(list);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag_content,new DataBindingFragment()).commit();
     }
 
     public void myClick(View view) {
