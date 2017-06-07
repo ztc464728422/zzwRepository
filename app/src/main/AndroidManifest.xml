@@ -62,6 +62,12 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".activity.RxJavaTestActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
         <service android:name=".service.TestBindService" android:exported="false">
             <intent-filter>
                 <action android:name="com.jay.example.service.TEST_SERVICE2"/>

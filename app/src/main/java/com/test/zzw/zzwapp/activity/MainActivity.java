@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
     @OnClick({R.id.btn_jni, R.id.btn_testpage, R.id.btn_tesdrawerlayout,
             R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice,
             R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,
-            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding})
+            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding,R.id.btn_rxjava})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -185,15 +185,14 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.btn_jni:
                 helloJni2();
-//                Toast.makeText(this,fromJni(),Toast.LENGTH_SHORT).show();
-//                Toast.makeText(this, JNIUtils.fromJni(),Toast.LENGTH_SHORT).show();
                 Toast.makeText(this, new JNIUtils().fromJni2(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_databinding:
                 startActivity(new Intent(MainActivity.this, DataBindingActivity.class));
-
                 break;
-
+            case R.id.btn_rxjava:
+                startActivity(new Intent(MainActivity.this, RxJavaTestActivity.class));
+                break;
         }
 
 

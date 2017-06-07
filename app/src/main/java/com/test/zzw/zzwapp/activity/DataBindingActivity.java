@@ -43,8 +43,8 @@ public class DataBindingActivity extends AppCompatActivity {
          list = new ObservableArrayList<>();
         list.add("loader!!!");
         binding.setList(list);
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag_content,new DataBindingFragment()).commit();
-    }
+    getSupportFragmentManager().beginTransaction().replace(R.id.frag_content,new DataBindingFragment()).commit();
+}
 
     public void myClick(View view) {
         mStu.setName("zzw——222");

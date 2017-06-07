@@ -20,11 +20,13 @@
         android:layout_height="wrap_content"
         android:text="testpage"/>
     <Button
-        android:layout_below="@id/btn_testpage"
         android:id="@+id/btn_tesdrawerlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn_tesdrawerlayout"/>
+        android:text="btn_tesdrawerlayout"
+        android:layout_below="@+id/btn_testpage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <Button
         android:layout_below="@id/btn_tesdrawerlayout"
         android:id="@+id/btn_testmutilayiytadapter"
@@ -80,4 +82,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="databinding"/>
+
+    <Button
+        android:layout_toRightOf="@id/btn_tesdrawerlayout"
+        android:id="@+id/btn_rxjava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rxjava"/>
 </RelativeLayout>

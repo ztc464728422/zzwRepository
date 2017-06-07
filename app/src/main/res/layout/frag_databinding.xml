@@ -12,6 +12,9 @@
         <variable
             name="imageUrl"
             type="String" />
+        <variable
+            name="time"
+            type="java.util.Date" />
     </data>
 
     <LinearLayout
@@ -29,6 +32,10 @@
             android:layout_height="wrap_content"
             android:onClick="@{frag.click}"
             android:text="@{stu2.name}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{time}"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:divider="#ffff0000"

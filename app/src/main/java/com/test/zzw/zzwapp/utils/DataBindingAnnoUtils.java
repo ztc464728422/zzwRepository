@@ -1,12 +1,16 @@
 package com.test.zzw.zzwapp.utils;
 
 import android.databinding.BindingAdapter;
+import android.databinding.BindingConversion;
 import android.util.Log;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -15,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class DataBindingAnnoUtils {
 
-    @BindingAdapter({"bind:image"})
+    @BindingAdapter({"image"})
     public static void imageLoader(ImageView imageView, String url){
         Log.e("zzwdd", "zzwimageLoader: imageLoader---"+url);
         Picasso.with(imageView.getContext()).load(url).into(imageView);
@@ -24,4 +28,10 @@ public class DataBindingAnnoUtils {
 //                url, imageView, options);
 
     }
+    @BindingConversion
+    public static String converData(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+
 }

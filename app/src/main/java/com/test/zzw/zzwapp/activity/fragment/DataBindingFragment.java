@@ -15,6 +15,7 @@ import com.test.zzw.zzwapp.adapter.DatabindingRecAdapter;
 import com.test.zzw.zzwapp.bean.Student;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Administrator on 2017/6/5.
@@ -42,7 +43,7 @@ public class DataBindingFragment extends Fragment {
         binding.setFrag(this);
         binding.setImageUrl("http://g.hiphotos.baidu.com/baike/w%3D268%3Bg%3D0/sign=f78b3af03bdbb6fd255be220311fcc25/c75c10385343fbf214402828b27eca8065388f49.jpg");
 //        mRecyclerView = (RecyclerView) binding.getRoot().findViewById(R.id.recyclerview);
-
+        binding.setTime(new Date());
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false));
         binding.recyclerview.setAdapter(new DatabindingRecAdapter(mData));
