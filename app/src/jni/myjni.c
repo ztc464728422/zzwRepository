@@ -62,20 +62,28 @@ Java_com_test_zzw_zzwapp_activity_MainActivity_helloJni2(JNIEnv *env, jobject in
 
 }
 
+JNIEXPORT void JNICALL
+Java_com_test_zzw_zzwapp_activity_MainActivity_helloJni3(JNIEnv *env, jobject instance) {
+
+    // TODO
+
+}
+
 JNIEXPORT jstring JNICALL
 Java_com_test_zzw_zzwapp_jni_JNIUtils_fromJni(JNIEnv *env, jclass type) {
 
     // TODO
 
 
-    return (*env)->NewStringUTF(env, "来自于JNIUtils.java");
+    return (*env)->NewStringUTF(env, "from myjni.c");
 }
 
+
 JNIEXPORT jstring JNICALL
-Java_com_test_zzw_zzwapp_jni_JNIUtils_fromJni2(JNIEnv *env, jobject instance) {
+Java_com_test_zzw_zzwapp_jni_JNIUtils_fromJni2(JNIEnv *env, jclass type) {
 
     // TODO
 
 
-    return (*env)->NewStringUTF(env, "来自于JNIUtils");
+    return (*env)->NewStringUTF(env, "from myjni.c");
 }

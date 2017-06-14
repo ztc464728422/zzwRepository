@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.test.zzw.zzwapp.R;
+import com.test.zzw.zzwapp.utils.StringUtils;
 import com.zzw.aidl.IMyAidlInterface;
 
 
@@ -47,7 +48,10 @@ public class TestAIDLActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         String number = edit_num.getText().toString();
-        int num = Integer.valueOf(number);
+        int num = 0;
+        if(!StringUtils.isEmpty(number)){
+             num = Integer.valueOf(number);
+        }
         try {
             txt_name.setText(iPerson.queryPerson(num));
         } catch (RemoteException e) {

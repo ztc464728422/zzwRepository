@@ -21,6 +21,7 @@ import com.test.zzw.zzwapp.R;
 import com.test.zzw.zzwapp.bean.Person;
 import com.test.zzw.zzwapp.db.MyDBOpenHelper;
 import com.test.zzw.zzwapp.jni.JNIUtils;
+import com.test.zzw.zzwapp.jni.JNIUtils2;
 import com.test.zzw.zzwapp.utils.DomHelper;
 import com.test.zzw.zzwapp.utils.SaxHelper;
 import com.test.zzw.zzwapp.utils.ViewUtils;
@@ -184,8 +185,7 @@ public class MainActivity extends AppCompatActivity
                 DomHelper.queryXML(this);
                 break;
             case R.id.btn_jni:
-                helloJni2();
-                Toast.makeText(this, new JNIUtils().fromJni2(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, new JNIUtils().fromJni2()+"---"+ new JNIUtils2().fromJni(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_databinding:
                 startActivity(new Intent(MainActivity.this, DataBindingActivity.class));
@@ -227,17 +227,5 @@ public class MainActivity extends AppCompatActivity
         if (closeFlag)
             finish();
     }
-
-    static {
-        System.loadLibrary("myjni");
-    }
-
-    public native void helloJni();
-
-    public native String fromJni();
-
-    public native String fromJni2();
-
-    public native void helloJni2();
 
 }

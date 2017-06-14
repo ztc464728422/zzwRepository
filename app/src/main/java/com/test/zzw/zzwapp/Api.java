@@ -1,5 +1,8 @@
 package com.test.zzw.zzwapp;
 
+import com.test.zzw.zzwapp.bean.LinkUser;
+import com.test.zzw.zzwapp.bean.ResultHttp;
+import com.test.zzw.zzwapp.bean.Version;
 import com.test.zzw.zzwapp.httpentity.LoginRequest;
 import com.test.zzw.zzwapp.httpentity.LoginResponse;
 import com.test.zzw.zzwapp.httpentity.RegisterRequest;
@@ -15,8 +18,11 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.HTTP;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -25,7 +31,11 @@ import retrofit2.http.Query;
 
 public interface Api {
     @GET("api/user/checkversion")
-    Observable<String> getVersion();
+    Observable<ResultHttp<Version>> getVersion();
+
+    @POST("api/user/login")
+    @FormUrlEncoded
+    Observable<ResultHttp<LinkUser>> login(@Field("username") String phoneStr, @Field("password") String passwordStr);
 
     @GET("/")
     Observable<RegisterResponse> register(@Body RegisterRequest request);
