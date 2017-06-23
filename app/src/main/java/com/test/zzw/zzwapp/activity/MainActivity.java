@@ -35,7 +35,7 @@ import javax.xml.parsers.SAXParserFactory;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends MyBaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -185,6 +185,7 @@ public class MainActivity extends AppCompatActivity
                 DomHelper.queryXML(this);
                 break;
             case R.id.btn_jni:
+                startActivity(new Intent(mContext,TestActivity.class));
                 Toast.makeText(this, new JNIUtils().fromJni2()+"---"+ new JNIUtils2().fromJni(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_databinding:
