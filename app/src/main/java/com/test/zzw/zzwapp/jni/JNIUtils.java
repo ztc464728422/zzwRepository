@@ -10,5 +10,5 @@ public class JNIUtils {
     }
     public native static String fromJni();
     public native static String fromJni2();
-
+    public native static String fromVectortest();
 }

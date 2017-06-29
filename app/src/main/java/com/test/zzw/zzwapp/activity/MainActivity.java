@@ -163,7 +163,7 @@ public class MainActivity extends MyBaseAppCompatActivity
 //                startActivity(mIntent);
                 break;
             case R.id.btn_testbindservice:
-                startActivity(new Intent(MainActivity.this, TestBindSerActivity.class));
+//                startActivity(new Intent(MainActivity.this, TestBindSerActivity.class));
                 break;
             case R.id.btn_aidl:
                 startActivity(new Intent(MainActivity.this, TestAIDLDDActivity.class));
@@ -186,7 +186,7 @@ public class MainActivity extends MyBaseAppCompatActivity
                 break;
             case R.id.btn_jni:
                 startActivity(new Intent(mContext,TestActivity.class));
-                Toast.makeText(this, new JNIUtils().fromJni2()+"---"+ new JNIUtils2().fromJni(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, new JNIUtils().fromVectortest(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_databinding:
                 startActivity(new Intent(MainActivity.this, DataBindingActivity.class));

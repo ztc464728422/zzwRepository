@@ -19,13 +19,13 @@
             android:id="@+id/btn_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{acitvity.myClick}"
+            android:onClick="@{acitvity::myClick}"
             android:text="获取version" />
         <Button
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{acitvity.myClick}"
+            android:onClick="@{acitvity::myClick}"
             android:text="登录" />
     </LinearLayout>
 </layout>

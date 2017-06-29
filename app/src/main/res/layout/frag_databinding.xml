@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{frag.click}"
+            android:onClick="@{frag::click}"
             android:text="@{stu2.name}"/>
         <TextView
             android:layout_width="wrap_content"
