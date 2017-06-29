@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+    <person id = "11">
+        <name>SAX解析</name>
+        <age>18</age>
+    </person>
+    <person id = "13">
+        <name>XML1</name>
+        <age>43</age>
+    </person>
+    <job id = "14">
+        <type id = "15">
+            <name2>typename</name2>
+            <age2>typenameage</age2>
+        </type>
+        <person id = "13">
+            <name>XML1</name>
+            <age>43</age>
+        </person>
+    </job>
+
+
+</persons>

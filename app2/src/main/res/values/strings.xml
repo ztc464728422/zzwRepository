@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ZzwAPP</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--  Tag_APP  Tag_Book -->
+    <item name="Tag_APP" type="id"></item>
+    <item name="Tag_Book" type="id"></item>
+
+    <string name="phone_edit_hint">请输入手机号</string>
+
+
+</resources>
