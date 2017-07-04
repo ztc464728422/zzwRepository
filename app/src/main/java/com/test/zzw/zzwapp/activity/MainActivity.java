@@ -1,12 +1,17 @@
 package com.test.zzw.zzwapp.activity;
 
+import android.Manifest;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.test.zzw.zzwapp.R;
 import com.test.zzw.zzwapp.bean.Person;
 import com.test.zzw.zzwapp.db.MyDBOpenHelper;
@@ -131,7 +137,7 @@ public class MainActivity extends MyBaseAppCompatActivity
     @OnClick({R.id.btn_jni, R.id.btn_testpage, R.id.btn_tesdrawerlayout,
             R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice,
             R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,
-            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding,R.id.btn_rxjava})
+            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding,R.id.btn_rxjava,R.id.btn_update})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -194,6 +200,9 @@ public class MainActivity extends MyBaseAppCompatActivity
             case R.id.btn_rxjava:
                 startActivity(new Intent(MainActivity.this, RxJavaTestActivity.class));
                 break;
+            case R.id.btn_update:
+                isOK();
+                break;
         }
 
 
@@ -227,6 +236,59 @@ public class MainActivity extends MyBaseAppCompatActivity
 //        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
         if (closeFlag)
             finish();
+    }
+
+    private int READ_EXTERNAL_STORAGE_REQUEST_CODE = 1;
+
+    public void isOK() {
+        int osVersion = Integer.valueOf(android.os.Build.VERSION.SDK);
+        if (osVersion > 22) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                //申请WRITE_EXTERNAL_STORAGE权限
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        READ_EXTERNAL_STORAGE_REQUEST_CODE);
+            } else {
+                getImei();
+            }
+        } else {
+            //如果SDK小于6.0则不去动态申请权限
+            getImei();
+        }
+//        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            //申请WRITE_EXTERNAL_STORAGE权限
+//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE},
+//                    WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+//        }else{
+//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE},
+//                    WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+//        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == READ_EXTERNAL_STORAGE_REQUEST_CODE) {
+            getImei();
+            Toast.makeText(getApplicationContext(), "授权成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "授权拒绝", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void getImei() {
+        PackageManager pm = getPackageManager();
+        boolean permission = (PackageManager.PERMISSION_GRANTED ==
+                pm.checkPermission("android.permission.READ_EXTERNAL_STORAGE", "com.test.zzw.zzwapp"));
+        if (permission) {
+            Toast.makeText(MainActivity.this, "有这个权限", Toast.LENGTH_SHORT).show();
+            TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), Environment.getExternalStorageDirectory().getAbsolutePath() + "/patch_signed_7zip.apk");
+
+        } else {
+            Toast.makeText(MainActivity.this, "木有这个权限", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }

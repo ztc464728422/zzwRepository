@@ -8,7 +8,7 @@ import com.test.zzw.zzwapp.utils.ImageLoaderUtils;
  * Created by Administrator on 2017/6/5.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends SampleApplication {
     @Override
     public void onCreate() {
         super.onCreate();
