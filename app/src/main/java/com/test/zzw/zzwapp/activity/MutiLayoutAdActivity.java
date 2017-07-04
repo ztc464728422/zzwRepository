@@ -17,7 +17,7 @@ import com.test.zzw.zzwapp.bean.PersonBean;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Created by zzw on 2017/4/19.

@@ -28,7 +28,7 @@ public class TestAIDLDDActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testbindser);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     ServiceConnection conn = new ServiceConnection() {

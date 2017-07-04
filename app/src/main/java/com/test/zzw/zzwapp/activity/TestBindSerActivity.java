@@ -27,7 +27,7 @@
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_testbindser);
-//        ButterKnife.inject(this);
+//        ButterKnife.bind(this);
 //    }
 //
 //    //保持所启动的Service的IBinder对象,同时定义一个ServiceConnection对象

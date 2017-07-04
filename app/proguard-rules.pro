@@ -176,3 +176,17 @@
 
 #下面需要填写自己bean对象对应的包名，所以建议将使用Gson解析的都放在同一包下
 -keep class com.dingyan.students.javabean.** { *; }
+
+#butterknife
+
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}

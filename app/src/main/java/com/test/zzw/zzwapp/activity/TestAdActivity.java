@@ -14,7 +14,7 @@ import com.test.zzw.zzwapp.bean.PersonBean;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Created by zzw on 2017/4/19.
@@ -22,7 +22,7 @@ import butterknife.InjectView;
 
 public class TestAdActivity extends AppCompatActivity {
 
-    @InjectView(R.id.list_test)
+    @BindView(R.id.list_test)
     ListView listTest;
 
     private ArrayList<PersonBean> personBeenList ;
@@ -31,7 +31,7 @@ public class TestAdActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         initAdapter();
     }

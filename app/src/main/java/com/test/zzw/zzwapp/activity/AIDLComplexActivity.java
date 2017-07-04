@@ -20,7 +20,7 @@ import com.test.zzw.zzwapp.bean.Salary;
 import com.zzw.aidl.ISalary;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,11 +30,11 @@ import butterknife.OnClick;
 
 public class AIDLComplexActivity extends Activity {
 
-    @InjectView(R.id.et_person)
+    @BindView(R.id.et_person)
     EditText etPerson;
-    @InjectView(R.id.btn_do)
+    @BindView(R.id.btn_do)
     Button btnDo;
-    @InjectView(R.id.tv_salary)
+    @BindView(R.id.tv_salary)
     TextView tvSalary;
     private ISalary iSalary;
 
@@ -42,7 +42,7 @@ public class AIDLComplexActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aidl_complex);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     ServiceConnection conn = new ServiceConnection() {

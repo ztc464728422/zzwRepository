@@ -22,7 +22,7 @@ public class TestActivity extends MyBaseAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_btns_tvs);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @Override

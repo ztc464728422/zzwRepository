@@ -14,7 +14,6 @@ import com.test.zzw.zzwapp.bean.PersonBean;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by zzw on 2017/4/19.
@@ -27,7 +26,7 @@ public class modelActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
 }

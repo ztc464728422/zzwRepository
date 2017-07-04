@@ -18,7 +18,7 @@ import com.test.zzw.zzwapp.bean.PersonBean;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Created by zzw on 2017/4/19.
@@ -27,11 +27,11 @@ import butterknife.InjectView;
 public class DrawerLayoutActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
-    @InjectView(R.id.ly_content)
+    @BindView(R.id.ly_content)
     FrameLayout lyContent;
-    @InjectView(R.id.list_left_drawer)
+    @BindView(R.id.list_left_drawer)
     ListView listLeftDrawer;
-    @InjectView(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     private ArrayList<PersonBean> menuLists;
     private MyBaseAdapter<PersonBean> myAdapter = null;
@@ -40,7 +40,7 @@ public class DrawerLayoutActivity extends AppCompatActivity implements AdapterVi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawerlayout);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         menuLists = new ArrayList<PersonBean>();
         menuLists.add(new PersonBean("name1", "实时信息"));
         menuLists.add(new PersonBean("name2", "提醒通知"));
