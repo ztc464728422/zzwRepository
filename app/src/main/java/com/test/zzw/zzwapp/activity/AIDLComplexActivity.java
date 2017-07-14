@@ -43,6 +43,7 @@ public class AIDLComplexActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aidl_complex);
         ButterKnife.bind(this);
+
     }
 
     ServiceConnection conn = new ServiceConnection() {

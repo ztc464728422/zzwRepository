@@ -39,4 +39,3 @@ Java_com_test_zzw_zzwapp_activity_TestActivity_HelloLoadPar(JNIEnv *env, jobject
 
     return (*env)->NewStringUTF(env, str_);
 }
-

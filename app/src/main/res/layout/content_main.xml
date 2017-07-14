@@ -105,4 +105,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample patch! 大于等于6.0，手动获取权限-更新后过后后再后后"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_rxjava"
+        android:layout_alignRight="@+id/btn_rxjava"
+        android:max="100"
+        android:progress="45"
+        android:layout_below="@+id/btn_testbindservice" />
 </RelativeLayout>

@@ -17,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,8 +42,12 @@ import javax.xml.parsers.SAXParserFactory;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
 public class MainActivity extends MyBaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    JNIUtils jniutils;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,11 @@ public class MainActivity extends MyBaseAppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         initdb();
+        initJni();
+    }
+
+    private void initJni() {
+        jniutils = new JNIUtils();
     }
 
     private void initdb() {
@@ -192,7 +202,10 @@ public class MainActivity extends MyBaseAppCompatActivity
                 break;
             case R.id.btn_jni:
                 startActivity(new Intent(mContext,TestActivity.class));
-                Toast.makeText(this, new JNIUtils().fromVectortest(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,jniutils.fromVectortest(), Toast.LENGTH_SHORT).show();
+                Log.e("btn_jni", "当前时间 "+ jniutils.getCTime2());
+                jniutils.gettrycatch();
+//                jniutils.threadTest();
                 break;
             case R.id.btn_databinding:
                 startActivity(new Intent(MainActivity.this, DataBindingActivity.class));

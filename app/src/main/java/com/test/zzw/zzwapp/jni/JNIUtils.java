@@ -11,4 +11,10 @@ public class JNIUtils {
     public native static String fromJni();
     public native static String fromJni2();
     public native static String fromVectortest();
+
+//    public native static String getCTime();
+public native static String getCTime2();
+    public native void gettrycatch();
+    public native void threadTest();
+
 }
