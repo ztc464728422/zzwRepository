@@ -1,6 +1,8 @@
 package com.test.zzw.zzwapp.activity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,4 +19,9 @@ public class MyBaseAppCompatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
     }
+
+    protected void toActivity(Class to){
+        startActivity(new Intent(mContext,to));
+    }
+
 }

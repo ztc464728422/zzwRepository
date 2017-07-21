@@ -45,11 +45,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity
+     <!--   <activity
             android:name=".activity.TestBindSerActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".activity.TestAIDLDDActivity"
             android:label="@string/app_name"
@@ -75,18 +75,21 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
+        <activity
+            android:name=".activity.IjkPlayerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <service android:name=".service.TestBindService" android:exported="false">
             <intent-filter>
                 <action android:name="com.jay.example.service.TEST_SERVICE2"/>
             </intent-filter>
         </service>
-        <service android:name=".service.TestIntentService" android:exported="false">
+    <!--    <service android:name=".service.TestIntentService" android:exported="false">
             <intent-filter >
                 <action android:name="com.test.intentservice"/>
             </intent-filter>
-        </service>
-
+        </service>-->
     </application>
 
 </manifest>

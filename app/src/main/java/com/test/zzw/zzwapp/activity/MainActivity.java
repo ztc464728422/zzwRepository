@@ -147,7 +147,7 @@ public class MainActivity extends MyBaseAppCompatActivity
     @OnClick({R.id.btn_jni, R.id.btn_testpage, R.id.btn_tesdrawerlayout,
             R.id.btn_testmutilayiytadapter, R.id.btn_testbindservice,
             R.id.btn_aidl, R.id.btn_com_aidl, R.id.btn_transact,
-            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding,R.id.btn_rxjava,R.id.btn_update})
+            R.id.btn_sax_xml, R.id.btn_dom_xml,R.id.btn_databinding,R.id.btn_rxjava,R.id.btn_update,R.id.btn_video})
     public void onClick(View v) {
         if (ViewUtils.isFastDoubleClick()) {
             return;
@@ -215,6 +215,9 @@ public class MainActivity extends MyBaseAppCompatActivity
                 break;
             case R.id.btn_update:
                 isOK();
+                break;
+            case R.id.btn_video:
+                toActivity(IjkPlayerActivity.class);
                 break;
         }
 

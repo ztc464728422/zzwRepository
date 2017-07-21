@@ -47,11 +47,13 @@
         android:layout_height="wrap_content"
         android:text="测试AIDL"/>
     <Button
-        android:layout_below="@id/btn_aidl"
         android:id="@+id/btn_com_aidl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试复杂对象AIDL"/>
+        android:text="测试复杂对象AIDL"
+        android:layout_below="@+id/btn_aidl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <Button
         android:layout_below="@id/btn_com_aidl"
         android:id="@+id/btn_transact"
@@ -116,4 +118,12 @@
         android:max="100"
         android:progress="45"
         android:layout_below="@+id/btn_testbindservice" />
+
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/progressBar"
+        android:id="@+id/btn_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ijkplayer"/>
 </RelativeLayout>
